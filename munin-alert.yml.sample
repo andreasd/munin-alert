@@ -1,0 +1,19 @@
+munin:
+  critical:
+    - pagerduty
+    - hipchat
+  warning:
+    - hipchat
+  ok:
+    - pagerduty
+    - hipchat
+  unknown:
+    - hipchat
+hipchat:
+  api_url: https://api.hipchat.com/v1/rooms/message
+  api_key: 123 
+  room_id: 123
+pagerduty:
+  api_url: https://events.pagerduty.com/generic/2010-04-15/create_event.json
+  api_key: 123
+
