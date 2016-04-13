@@ -4,7 +4,7 @@ munin-alert is a perl script which handles [munin alerts](http://munin-monitorin
 
 # Features
 
-Munin-alert send alerts to pagerduty or hipchat room according to config file and event type. For example, you can send warnings to hipchat and pagerduty, critical errors to pagerduty, uknowns only to hipchat. Same munin-alert resolves alerts at pagerduty which cames with OK event type.
+Munin-alert send alerts to pagerduty, slack channel or hipchat room according to config file and event type. For example, you can send warnings to hipchat and pagerduty, critical errors to pagerduty, uknowns only to hipchat. Same munin-alert resolves alerts at pagerduty which cames with OK event type.
 
 # Getting started
 
@@ -50,10 +50,17 @@ hipchat:
   api_url: https://api.hipchat.com/v1/rooms/message
   api_key: 123
   room_id: 123
+slack:
+  token: 123
+  channel: #123
+  username: 123
+  icon_url: http://123/123.png
 pagerduty:
   api_url: https://events.pagerduty.com/generic/2010-04-15/create_event.json
   api_key: 123
 ```
+
+Note: The slack functionality uses the API, not callbacks/integrations.
 
 If you don't want to do anything with unknown events, just skip this option.
 
